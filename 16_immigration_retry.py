@@ -9,7 +9,7 @@ def solution(n, times):
         for t in times:
             t_sum += int(mid/t)
         print(t_sum)
-        if(t_sum>n):
+        if(t_sum>=n):
             end = mid-1
             
         elif(t_sum<n):

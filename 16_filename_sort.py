@@ -24,7 +24,7 @@ def solution(files):
         sorted_files.append((f[0:head_idx], f[head_idx:num_idx], f[num_idx:]))
     print(sorted_files)
     
-    sorted_files.sort(key = lambda x : (x[0].lower(), delete_zero(x[1]))) #head 대소문자 구분없이 정렬 우선, head 같을 경우 number에서 앞에 붙은 0과 관계없이 정렬, 파이썬 사랑해
+    sorted_files.sort(key = lambda x : (x[0].lower(), int(x[1]))) #head 대소문자 구분없이 정렬 우선, head 같을 경우 number에서 앞에 붙은 0과 관계없이 정렬, 파이썬 사랑해
     print(sorted_files)
     
     for f in sorted_files:
@@ -33,11 +33,3 @@ def solution(files):
         
     print(answer)
     return answer
-
-def delete_zero(x):
-    idx = 0
-    while True:
-        if not x[idx] == 'a':
-            break
-        idx+=1
-    return (int(x[idx:]))
